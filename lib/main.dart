@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flick/library.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(EntityMovieAdapter());
+  Hive.registerAdapter(EntityTvAdapter());
+  await Hive.openBox<EntityMovie>(movieDatabaseName);
+  await Hive.openBox<EntityTv>(tvShowDatabaseName);
+
   runApp(const MyApp());
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
 
 class MyApp extends StatelessWidget {

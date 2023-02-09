@@ -21,3 +21,7 @@ export 'src/data/local_source/local_db.dart';
 export 'src/data/remote_source/movie_api.dart';
 export 'src/data/remote_source/tv_api.dart';
 export 'src/data/repository/repo.dart';
+
+/// Utility classes and functions
+export 'src/utils/utils_extensions.dart';
+export 'src/utils/utils_functions.dart';
