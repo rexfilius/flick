@@ -25,6 +25,7 @@ export 'src/data/repository/repo.dart';
 /// Utility classes and functions
 export 'src/utils/utils_extensions.dart';
 export 'src/utils/utils_functions.dart';
+export 'src/utils/app_routes.dart';
 export 'src/utils/animation/shimmer/custom_splash_animation.dart';
 export 'src/utils/animation/shimmer/shimmer_animation.dart';
 export 'src/utils/animation/shimmer/shimmer_animator.dart';
@@ -32,6 +33,15 @@ export 'src/utils/animation/shimmer_list_movie_summary.dart';
 export 'src/utils/animation/shimmer_list_now_showing.dart';
 export 'src/utils/animation/shimmer_list_tv_summary.dart';
 
+/// Widgets used across UI
+export 'src/screens/widgets/card_explore.dart';
+export 'src/screens/widgets/card_now_showing.dart';
+export 'src/screens/widgets/card_now_showing_tv.dart';
+export 'src/screens/widgets/generic_dialog.dart';
+
 /// Screens
-export 'src/screens/explore/screen_explore.dart';
+export 'src/screens/home/screen_explore.dart';
 export 'src/screens/home/screen_home.dart';
+export 'src/screens/home/screen_movie.dart';
+export 'src/screens/details/screen_movie_detail.dart';
+export 'src/screens/details/screen_tv_detail.dart';
