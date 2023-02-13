@@ -9,6 +9,8 @@ class ScreenMovieDetail extends StatefulWidget {
 }
 
 class _ScreenMovieDetailState extends State<ScreenMovieDetail> {
+  Repo repo = Repo();
+
   @override
   Widget build(BuildContext context) {
     final movie = ModalRoute.of(context)!.settings.arguments as Result;
@@ -62,21 +64,22 @@ class _ScreenMovieDetailState extends State<ScreenMovieDetail> {
                     ),
                     IconButton(
                       onPressed: () async {
-                        // final aBoolean = await showSaveDialog(context);
-                        // if (aBoolean) {
-                        //   EntityMovie entityMovie =
-                        //       await movie.convertToDatabaseModel();
-                        //   HiveDatabase().addMovieToDatabase(entityMovie);
-                        //   //-------------------------------
-                        //   // if (!context.mounted) return;
-                        //   // ScaffoldMessenger.of(context).showSnackBar(
-                        //   //   const SnackBar(
-                        //   //     padding: EdgeInsets.all(8.0),
-                        //   //     backgroundColor: Colors.black54,
-                        //   //     content: Text('Item has been bookmarked'),
-                        //   //   ),
-                        //   // );
-                        // }
+                        final aBoolean = await showSaveDialog(context);
+                        if (aBoolean) {
+                          EntityMovie entityMovie =
+                              await movie.convertToDatabaseModel();
+                          repo.addMovieToDB(movie: entityMovie);
+
+                          //-------------------------------
+                          // if (!context.mounted) return;
+                          // ScaffoldMessenger.of(context).showSnackBar(
+                          //   const SnackBar(
+                          //     padding: EdgeInsets.all(8.0),
+                          //     backgroundColor: Colors.black54,
+                          //     content: Text('Item has been bookmarked'),
+                          //   ),
+                          // );
+                        }
                       },
                       icon: const Icon(Icons.bookmark_border_sharp),
                     ),

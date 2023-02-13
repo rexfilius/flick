@@ -40,6 +40,8 @@ export 'src/screens/widgets/card_now_showing_tv.dart';
 export 'src/screens/widgets/generic_dialog.dart';
 export 'src/screens/widgets/card_movie_summary.dart';
 export 'src/screens/widgets/card_tv_summary.dart';
+export 'src/screens/widgets/card_movie_entity_summary.dart';
+export 'src/screens/widgets/card_tv_entity_summary.dart';
 
 /// Screens
 export 'src/screens/home/screen_explore.dart';

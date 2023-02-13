@@ -1,81 +1,92 @@
 import 'package:flick/library.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class Repo {
-  MovieApi movieApi;
-  LocalDatabase localDatabase;
-  TvApi tvApi;
+  MovieApi _movieApi;
+  LocalDatabase _localDatabase;
+  TvApi _tvApi;
 
   Repo._internal()
-      : movieApi = MovieApi(),
-        localDatabase = LocalDatabase(),
-        tvApi = TvApi();
+      : _movieApi = MovieApi(),
+        _localDatabase = LocalDatabase(),
+        _tvApi = TvApi();
   //
   static final Repo _instance = Repo._internal();
   factory Repo() {
     return _instance;
   }
 
+  static LocalDatabase get localDB => LocalDatabase();
+
+  Box<EntityMovie> getMovieDB() {
+    return _localDatabase.getMovieBox();
+  }
+
+  Box<EntityTv> getShowDB() {
+    return _localDatabase.getTvShowBox();
+  }
+
   void addMovieToDB({required EntityMovie movie}) {
-    localDatabase.addMovieToDatabase(movie: movie);
+    _localDatabase.addMovieToDatabase(movie: movie);
   }
 
   void addShowToDB({required EntityTv tvShow}) {
-    localDatabase.addShowToDatabase(tvShow: tvShow);
+    _localDatabase.addShowToDatabase(tvShow: tvShow);
   }
 
   void deleteMovieInDB({required EntityMovie movie}) {
-    localDatabase.removeMovieFromDatabase(movie: movie);
+    _localDatabase.removeMovieFromDatabase(movie: movie);
   }
 
   void deleteShowInDB({required EntityTv tvShow}) {
-    localDatabase.removeTvShowFromDatabase(tvShow: tvShow);
+    _localDatabase.removeTvShowFromDatabase(tvShow: tvShow);
   }
 
   bool isMovieInDB({required EntityMovie movie}) {
-    return localDatabase.isMovieInDatabase(movie: movie);
+    return _localDatabase.isMovieInDatabase(movie: movie);
   }
 
   bool isShowInDB({required EntityTv tvShow}) {
-    return localDatabase.isTvShowInDatabase(tvShow: tvShow);
+    return _localDatabase.isTvShowInDatabase(tvShow: tvShow);
   }
 
   List<EntityMovie> getMovies() {
-    return localDatabase.getMovieListFromDatabase();
+    return _localDatabase.getMovieListFromDatabase();
   }
 
   List<EntityTv> getShows() {
-    return localDatabase.getTvShowListFromDatabase();
+    return _localDatabase.getTvShowListFromDatabase();
   }
 
   Future<MovieNowPlaying> getMovieNowPlaying() async {
-    return movieApi.getNowPlayingMovies();
+    return _movieApi.getNowPlayingMovies();
   }
 
   Future<MoviePopular> getMoviePopular() async {
-    return movieApi.getPopularMovies();
+    return _movieApi.getPopularMovies();
   }
 
   Future<MovieTopRated> getMovieTopRated() async {
-    return movieApi.getTopRatedMovies();
+    return _movieApi.getTopRatedMovies();
   }
 
   Future<MovieTrending> getMovieTrending() async {
-    return movieApi.getTrendingMovies();
+    return _movieApi.getTrendingMovies();
   }
 
   Future<MovieUpcoming> getMovieUpcoming() async {
-    return movieApi.getUpcomingMovies();
+    return _movieApi.getUpcomingMovies();
   }
 
   Future<MovieSearch> searchMovies({required String query}) async {
-    return movieApi.searchMovies(query: query);
+    return _movieApi.searchMovies(query: query);
   }
 
   Future<TvOnAir> getTvOnAir() async {
-    return tvApi.getOnTheAirTVShow();
+    return _tvApi.getOnTheAirTVShow();
   }
 
   Future<TvPopular> getTvPopular() async {
-    return tvApi.getPopularTVShow();
+    return _tvApi.getPopularTVShow();
   }
 }

@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flick/library.dart';
 
-class ScreenTvDetail extends StatelessWidget {
+class ScreenTvDetail extends StatefulWidget {
   const ScreenTvDetail({super.key});
+
+  @override
+  State<ScreenTvDetail> createState() => _ScreenTvDetailState();
+}
+
+class _ScreenTvDetailState extends State<ScreenTvDetail> {
+  Repo repo = Repo();
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +65,12 @@ class ScreenTvDetail extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () async {
-                        // final aBoolean = await showSaveDialog(context);
-                        // if (aBoolean) {
-                        //   EntityTvShow entityTvShow =
-                        //       await tvShow.convertToDatabaseModel();
-                        //   HiveDatabase().addShowToDatabase(entityTvShow);
-                        // }
+                        final aBoolean = await showSaveDialog(context);
+                        if (aBoolean) {
+                          EntityTv entityTvShow =
+                              await tvShow.convertToDatabaseModel();
+                          repo.addShowToDB(tvShow: entityTvShow);
+                        }
                       },
                       icon: const Icon(Icons.bookmark_border_sharp),
                     ),
