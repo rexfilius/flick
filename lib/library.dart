@@ -38,6 +38,8 @@ export 'src/screens/widgets/card_explore.dart';
 export 'src/screens/widgets/card_now_showing.dart';
 export 'src/screens/widgets/card_now_showing_tv.dart';
 export 'src/screens/widgets/generic_dialog.dart';
+export 'src/screens/widgets/card_movie_summary.dart';
+export 'src/screens/widgets/card_tv_summary.dart';
 
 /// Screens
 export 'src/screens/home/screen_explore.dart';
@@ -45,3 +47,9 @@ export 'src/screens/home/screen_home.dart';
 export 'src/screens/home/screen_movie.dart';
 export 'src/screens/details/screen_movie_detail.dart';
 export 'src/screens/details/screen_tv_detail.dart';
+export 'src/screens/bookmarks/screen_bookmark_movie.dart';
+export 'src/screens/bookmarks/screen_bookmark_tv.dart';
+export 'src/screens/tv/screen_popular_tv.dart';
+export 'src/screens/movie/screen_popular_movie.dart';
+export 'src/screens/movie/screen_top_rated_movie.dart';
+export 'src/screens/movie/screen_trending_movie.dart';

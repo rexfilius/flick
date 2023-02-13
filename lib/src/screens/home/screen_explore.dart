@@ -17,27 +17,32 @@ class ScreenExplore extends StatelessWidget {
         CardExplore(
           color: Colors.teal.shade100,
           title: 'Bookmarked Movies',
-          onPressed: null,
+          navigateTo: AppRoutes.screenBookmarkMovie,
         ),
         CardExplore(
           color: Colors.teal.shade200,
           title: 'Bookmarked TV shows',
-          onPressed: null,
+          navigateTo: AppRoutes.screenBookmarkTv,
         ),
         CardExplore(
           color: Colors.teal.shade300,
           title: 'Popular TV shows',
-          onPressed: null,
+          navigateTo: AppRoutes.screenPopularTV,
         ),
         CardExplore(
-          color: Colors.teal.shade100,
-          title: 'Bookmarked Movies',
-          onPressed: null,
+          color: Colors.teal.shade400,
+          title: 'Popular Movies',
+          navigateTo: AppRoutes.screenPopularMovie,
         ),
         CardExplore(
-          color: Colors.teal.shade100,
-          title: 'Bookmarked Movies',
-          onPressed: null,
+          color: Colors.teal.shade500,
+          title: 'Trending Movies',
+          navigateTo: AppRoutes.screenTrendingMovie,
+        ),
+        CardExplore(
+          color: Colors.teal.shade600,
+          title: 'Top rated Movies',
+          navigateTo: AppRoutes.screenTopRatedMovie,
         ),
       ],
     );
