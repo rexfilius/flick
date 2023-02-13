@@ -30,10 +30,10 @@ class _ScreenHomeState extends State<ScreenHome> {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () async {
-              // showSearch(
-              //   context: context,
-              //   delegate: MovieSearchDelegate(),
-              // );
+              showSearch(
+                context: context,
+                delegate: MovieSearchDelegate(),
+              );
             },
           ),
         ],

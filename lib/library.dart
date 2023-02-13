@@ -42,11 +42,13 @@ export 'src/screens/widgets/card_movie_summary.dart';
 export 'src/screens/widgets/card_tv_summary.dart';
 export 'src/screens/widgets/card_movie_entity_summary.dart';
 export 'src/screens/widgets/card_tv_entity_summary.dart';
+export 'src/screens/widgets/error_text.dart';
 
 /// Screens
 export 'src/screens/home/screen_explore.dart';
 export 'src/screens/home/screen_home.dart';
 export 'src/screens/home/screen_movie.dart';
+export 'src/screens/home/components/movie_search_delegate.dart';
 export 'src/screens/details/screen_movie_detail.dart';
 export 'src/screens/details/screen_tv_detail.dart';
 export 'src/screens/bookmarks/screen_bookmark_movie.dart';
