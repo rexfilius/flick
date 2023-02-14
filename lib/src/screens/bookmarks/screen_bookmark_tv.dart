@@ -24,6 +24,9 @@ class _ScreenBookmarkTVState extends State<ScreenBookmarkTV> {
             child: ValueListenableBuilder(
               valueListenable: Repo().getShowDB().listenable(),
               builder: (context, box, widget) {
+                if (bookmarkedTvShows.isEmpty) {
+                  return const Center(child: Text('No bookmarked TV shows'));
+                }
                 return ListView.builder(
                   itemCount: bookmarkedTvShows.length,
                   itemBuilder: (context, index) {

@@ -24,6 +24,9 @@ class _ScreenBookmarkMovieState extends State<ScreenBookmarkMovie> {
             child: ValueListenableBuilder(
                 valueListenable: Repo().getMovieDB().listenable(),
                 builder: (context, box, widget) {
+                  if (bookmarkedMovies.isEmpty) {
+                    return const Center(child: Text('No bookmarked movies'));
+                  }
                   return ListView.builder(
                     itemCount: bookmarkedMovies.length,
                     itemBuilder: (context, index) {
