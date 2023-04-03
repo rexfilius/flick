@@ -4,9 +4,6 @@ import 'package:flick/private/token.dart';
 import 'package:flick/library.dart';
 import 'package:http/http.dart' as http;
 
-const String movieBaseUrl = "https://api.themoviedb.org/3/";
-const String movieBaseUrlImage = "https://image.tmdb.org/t/p/original";
-
 class MovieApi {
   static http.Client client = http.Client();
 
@@ -14,7 +11,8 @@ class MovieApi {
   /// for all movies that have a release type of 2 or 3 within the
   /// specified date range.
   Future<MovieNowPlaying> getNowPlayingMovies() async {
-    const String url = "${movieBaseUrl}movie/now_playing?api_key=$apiKey";
+    const String url =
+        "${ApiConstants.movieBaseUrl}movie/now_playing?api_key=$apiKey";
     try {
       final response = await client.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -32,7 +30,8 @@ class MovieApi {
   /// Get a list of the current popular movies on TMDB.
   /// This list updates daily[From the TMDB API].
   Future<MoviePopular> getPopularMovies() async {
-    const String url = "${movieBaseUrl}movie/popular?api_key=$apiKey";
+    const String url =
+        "${ApiConstants.movieBaseUrl}movie/popular?api_key=$apiKey";
     try {
       final response = await client.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -49,7 +48,8 @@ class MovieApi {
 
   /// Get the top rated movies on TMDB.
   Future<MovieTopRated> getTopRatedMovies() async {
-    const String url = "${movieBaseUrl}movie/top_rated?api_key=$apiKey";
+    const String url =
+        "${ApiConstants.movieBaseUrl}movie/top_rated?api_key=$apiKey";
     try {
       final response = await client.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -68,7 +68,8 @@ class MovieApi {
   ///  items over the period of a day while items have a 24 hour half life.
   /// The weekly list tracks items over a 7 day period, with a 7 day half life.
   Future<MovieTrending> getTrendingMovies() async {
-    const String url = "${movieBaseUrl}trending/movie/day?api_key=$apiKey";
+    const String url =
+        "${ApiConstants.movieBaseUrl}trending/movie/day?api_key=$apiKey";
     try {
       final response = await client.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -87,7 +88,8 @@ class MovieApi {
   /// that looks for all movies that have a release type of 2 or 3 within
   /// the specified date range.
   Future<MovieUpcoming> getUpcomingMovies() async {
-    const String url = "${movieBaseUrl}movie/upcoming?api_key=$apiKey";
+    const String url =
+        "${ApiConstants.movieBaseUrl}movie/upcoming?api_key=$apiKey";
     try {
       final response = await client.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -107,7 +109,7 @@ class MovieApi {
   /// data is expected to be a 'movie title'.
   Future<MovieSearch> searchMovies({required String query}) async {
     String url =
-        "${movieBaseUrl}search/movie?api_key=$apiKey&query=$query&adult=false";
+        "${ApiConstants.movieBaseUrl}search/movie?api_key=$apiKey&query=$query&adult=false";
 
     try {
       final response = await client.get(Uri.parse(url));

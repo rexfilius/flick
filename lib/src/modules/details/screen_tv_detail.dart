@@ -42,7 +42,7 @@ class _ScreenTvDetailState extends State<ScreenTvDetail> {
                   width: 0.85 * screenWidth,
                   height: 1.4 * screenWidth,
                   placeholder: 'assets/loading_image.gif',
-                  image: "$tvBaseUrlImage${tvShow.posterPath}",
+                  image: "${ApiConstants.tvBaseUrlImage}${tvShow.posterPath}",
                   fit: BoxFit.cover,
                 ),
               ),

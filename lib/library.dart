@@ -25,6 +25,7 @@ export 'src/data/repository/repo.dart';
 /// Utility classes and functions
 export 'src/utils/utils_extensions.dart';
 export 'src/utils/utils_functions.dart';
+export 'src/utils/api_constants.dart';
 export 'src/config/app_routes.dart';
 export 'src/config/app_theme.dart';
 export 'src/utils/animation/shimmer/custom_splash_animation.dart';

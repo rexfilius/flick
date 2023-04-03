@@ -43,7 +43,7 @@ class CardMovieSummary extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: CachedNetworkImageProvider(
-                      "$movieBaseUrlImage${movie.posterPath}",
+                      "${ApiConstants.movieBaseUrlImage}${movie.posterPath}",
                     ),
                   ),
                 ),

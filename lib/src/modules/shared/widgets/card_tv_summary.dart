@@ -43,7 +43,7 @@ class CardTvSummary extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: CachedNetworkImageProvider(
-                      "$movieBaseUrlImage${tvShow.posterPath}",
+                      "${ApiConstants.movieBaseUrlImage}${tvShow.posterPath}",
                     ),
                   ),
                 ),

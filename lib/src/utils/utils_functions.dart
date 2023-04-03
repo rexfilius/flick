@@ -34,7 +34,7 @@ Future<String> saveMovieImageToAppDirectory(Result movie) async {
   String imageUrl;
 
   try {
-    imageUrl = '$movieBaseUrlImage${movie.posterPath}';
+    imageUrl = "${ApiConstants.movieBaseUrlImage}${movie.posterPath}";
     var request = await httpClient.getUrl(Uri.parse(imageUrl));
     var response = await request.close();
 
@@ -63,7 +63,7 @@ Future<String> saveShowImageToAppDirectory(TvResult tvShow) async {
   String imageUrl;
 
   try {
-    imageUrl = '$tvBaseUrlImage${tvShow.posterPath}';
+    imageUrl = "${ApiConstants.tvBaseUrlImage}${tvShow.posterPath}";
     var request = await httpClient.getUrl(Uri.parse(imageUrl));
     var response = await request.close();
 

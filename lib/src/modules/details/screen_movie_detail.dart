@@ -41,7 +41,7 @@ class _ScreenMovieDetailState extends State<ScreenMovieDetail> {
                   width: 0.85 * screenWidth,
                   height: 1.4 * screenWidth,
                   placeholder: 'assets/loading_image.gif',
-                  image: "$movieBaseUrlImage${movie.posterPath}",
+                  image: "${ApiConstants.movieBaseUrlImage}${movie.posterPath}",
                   fit: BoxFit.cover,
                 ),
               ),

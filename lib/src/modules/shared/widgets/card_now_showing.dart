@@ -31,7 +31,7 @@ class CardNowShowing extends StatelessWidget {
           width: 0.5 * screenWidth,
           height: 0.7 * screenWidth,
           child: CachedNetworkImage(
-            imageUrl: "$movieBaseUrlImage${movie.posterPath}",
+            imageUrl: "${ApiConstants.movieBaseUrlImage}${movie.posterPath}",
           ),
         ),
       ),
