@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flick/library.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -10,7 +11,11 @@ void main() async {
   await Hive.openBox<EntityMovie>(movieDatabaseName);
   await Hive.openBox<EntityTv>(tvShowDatabaseName);
 
-  runApp(const FlickApp());
+  runApp(
+    const ProviderScope(
+      child: FlickApp(),
+    ),
+  );
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
@@ -33,14 +38,3 @@ class FlickApp extends StatelessWidget {
     );
   }
 }
-
-/// AppBarTheme used all through the app
-AppBarTheme globalAppBarTheme = AppBarTheme(
-  elevation: 0,
-  foregroundColor: Colors.black,
-  backgroundColor: Colors.white,
-  centerTitle: true,
-  systemOverlayStyle: SystemUiOverlayStyle(
-    statusBarColor: Colors.grey.shade400,
-  ),
-);
